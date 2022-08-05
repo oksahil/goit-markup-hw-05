@@ -102,10 +102,12 @@ body {
 .header-tel,
 .header-mail {
     color: #757575;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-link {
     color: #212121;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-link:hover,
 .header-link:focus,
@@ -117,6 +119,7 @@ body {
 }
 .header-tel {
     margin-left: 50px;
+    
 }
 .header-list {
     display: flex;
@@ -136,7 +139,20 @@ body {
 /*.header-item:not(last-child) {
     margin-right: 50px;
 }*/
+.aktive {
+    position: relative;
 
+}
+.aktive::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 4px;
+    background: #2196F3;
+    border-radius: 2px;
+    left: 0;
+    bottom: -28px;
+}
 /*--------------------hero-ind-------------------*/
 .hero {
     
@@ -184,17 +200,24 @@ body {
         align-items: center;
         text-align: center;
         
-
+        border-radius: 4px;
         letter-spacing: 0.06em;
         color: #FFFFFF;
         background-color: #2196F3;
         min-width: 200px;
         min-height: 50px;
         }
+.btn {
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 .btn:hover,
 .btn:focus {
     background-color: #2196F3;
     color: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
 }
 
 /*--------------------benefits-ind-------------------*/
@@ -258,6 +281,31 @@ body {
 .bisness-title {
         margin-bottom: 50px;
 }
+.bisness-item {
+    position: relative;
+}
+
+.bisness-item-top-text {
+        position: absolute;
+        left: 50%;
+        padding-top: 27px;
+        transform: translate(-50%, 0);
+        bottom: 0px;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: calc(16 / 14);
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        text-align: center;
+       
+        
+       
+            color: #FFFFFF;
+            background: rgba(47, 48, 58, 0.8);
+            width: 100%;
+            height: 70px;
+            
+}
 /*--------------------team-ind--------------------*/
 .team {
         
@@ -319,11 +367,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     
 
 }
 .team-soc-icon {
     fill:#afb1b8;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-soc-link:focus,
 .team-soc-link:hover {
@@ -353,9 +403,11 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-icon {
         fill: #afb1b8;
+        transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-link:focus,
 .clients-link:hover {
@@ -388,6 +440,10 @@ body {
         letter-spacing: 0.03em;
         color: #212121;
         padding: 6px 22px;
+        border-radius: 4px;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
         
         
 }
@@ -429,6 +485,7 @@ body {
 }
 .portfolio-item {
     width: calc((100% - 60px) / 3);
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-item-content {
     padding: 20px 24px;
@@ -442,6 +499,32 @@ body {
             0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;
 
+}
+.portfolio-item:hover .portfolio-item-top-text {
+    transform: translateY(0%);
+
+}
+.portfolio-top-text {
+    position: relative;
+    overflow: hidden;
+}
+.portfolio-item-top-text {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    font-size: 18px;
+    line-height: calc(28 / 18);
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+    padding-top: 63px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 63px;
+    background: rgba(33, 150, 243, 0.9);
+    height: 100%;
+    transform: translateY(100%);
+    transition: transform 750ms cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: auto;
 }
 /*--------------------footer--------------------*/
 .footer {
@@ -523,10 +606,12 @@ body {
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);;
+    background-color: rgba(255, 255, 255, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 
 }
@@ -545,4 +630,57 @@ body {
 .footer-soc-link:hover .team-soc-icon,
 .footer-soc-link:focus .team-soc-icon {
     fill: #ffffff;
+}
+/*--------------------pop-app--------------------*/
+.fogging {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0px;
+    top: 0px;
+    background: rgba(0, 0, 0, 0.2);
+    transition: opacity 700ms cubic-bezier(0.4, 0, 0.2, 1),
+                visibility 700ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-icon-close {
+    background: #FFFFFF;
+    
+    
+    }
+    .fogging.is-hidden .modal-window {
+        transform: translate(0, 0) scale(0) rotate(180deg);
+    }
+.btn-close {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+.modal-window {
+    width: 528px;
+    min-height: 581px;
+    background-color: #ffffff;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 
+                0px 1px 1px rgba(0, 0, 0, 0.14), 
+                0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1) rotate(0);
+    transition: transform 750ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
